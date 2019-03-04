@@ -1,0 +1,231 @@
+*{
+  margin:0;
+  padding:0;
+}
+.blue{
+  background-color: blue;
+  transition: background-color 5s;
+  position: absolute;
+  left: 500px;
+}
+
+.red{
+  background-color: red;
+  transition: border-radius 5s;
+}
+
+.square {
+  height: 100px;
+  width: 100px;
+}
+
+.blue:hover{
+  background-color:yellow;
+  animation: bounce 5s;
+}
+
+.jello{
+  background-color:red;
+}
+
+.jello:hover{
+  animation: grow 5s forwards, wiggle 1s infinite;
+}
+
+@keyframes wiggle {
+  0%{
+    transform: rotate(0deg);
+  }
+  25%{
+    transform: rotate(5deg);
+  }
+  50%{
+    transform: rotate(-5deg);
+  }
+  75%{
+    transform: rotate(5deg);
+  }
+  100%{
+    transform: rotate(-5deg);
+  }
+}
+
+@keyframes grow {
+  0% {
+    height:100px;
+    width:100px;
+  }
+  100% {
+    height:200px;
+    width:200px;
+  }
+}
+
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(500px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.red:hover {
+  border-radius: 50%;
+}
+
+.circle{
+  height:100px;
+  width:100px;
+  border-radius:50%;
+  border: 5px dashed black;
+  animation: rainbow 5s, rotate 5s;
+}
+
+.circle:hover{
+  animation-play-state:running, paused;
+}
+
+@keyframes rainbow {
+  0% {
+    background-color: red;
+  }
+  15% {
+    background-color: orange;
+  }
+  30% {
+    background-color: yellow;
+  }
+  45% {
+    background-color: green;
+  }
+  60% {
+    background-color: blue;
+  }
+  75% {
+    background-color: indigo;
+  }
+  90% {
+    background-color: violet;
+  }
+  100% {
+    background-color: white;
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform:  rotate(180deg);
+  }
+  100% {
+    transform: rotate(200deg);
+  }
+}
+.nav-bar {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  padding:20px 0;
+  background-color:lightgray;
+}
+a {
+  text-decoration: none;
+  font-size:40px;
+  color:black;
+}
+
+li {
+  list-style-type: none;
+}
+
+#home a{
+  transition: font-size 2s;
+}
+
+#home:hover {
+  background: linear-gradient(to right, #ff8a00, #da1b60);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: wiggleHome 1s infinite;
+}
+
+#home a:hover{
+  font-size: 50px;
+}
+
+@keyframes wiggleHome{
+  0%{
+    transform: rotate(0deg);
+  }
+  25%{
+    transform: rotate(1deg);
+  }
+  50%{
+    transform: rotate(-2deg);
+  }
+  75%{
+    transform: rotate(3deg);
+  }
+  100%{
+    transform: rotate(-4deg);
+  }
+}
+
+
+
+#about {
+  position:relative;
+  overflow:hidden;
+}
+
+.underline{
+  position:absolute;
+  bottom:0;
+  width:100%;
+  height:100%;
+  border-bottom:4px solid black;
+  transform:translate(-100%);
+}
+
+#about:hover .underline{
+  transform:translate(0);
+  transition: transform 2s;
+}
+
+#contact:hover {
+  animation: contactRotate 3s, verticalFlip 3s, skew 1s 3s;
+}
+
+@keyframes skew {
+  0% {
+    transform: skewX(0deg)
+  }
+  100% {
+    transform: skewX(25deg)
+  }
+}
+
+@keyframes contactRotate {
+  0% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+
+@keyframes verticalFlip {
+  25% {
+    transform: rotateY(0deg);
+  }
+  75%{
+    transform: rotateY(360deg);
+  }
+}
